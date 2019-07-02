@@ -1,21 +1,20 @@
 package application;
 
-import java.util.Date;
+import java.util.Locale;
 
 import modal.dao.DaoFactory;
 import modal.dao.SellerDao;
-import modal.entities.Department;
 import modal.entities.Seller;
 
 public class Program {
 
 	public static void main(String[] args) {
 		
-		Department obj = new Department(1, "Books");
-		
-		Seller seller = new Seller(21, "Bob", "bob@gmail", new Date(), 3000.00, obj);
+		Locale.setDefault(Locale.US);
 		
 		SellerDao sellerDao = DaoFactory.createSellerDao();
+		
+		Seller seller = sellerDao.findById(3);
 		
 		System.out.println(seller);
 		

@@ -1,6 +1,7 @@
 package modal.entities;
 
 import java.io.Serializable;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Seller implements Serializable {
@@ -13,6 +14,7 @@ public class Seller implements Serializable {
 	private Double baseSalary;
 	
 	private Department departament;
+	private static SimpleDateFormat sdf = new SimpleDateFormat("dd/DD/yyyy");
 	
 	public Seller() {
 	}
@@ -101,8 +103,12 @@ public class Seller implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Seller [id=" + id + ", name=" + name + ", email=" + email + ", birthDate=" + birthDate + ", baseSalary="
-				+ baseSalary + ", departament=" + departament + "]";
+		return "Seller:\nId = " + id + 
+				"\nName = " + name + 
+				"\nEmail = " + email + 
+				"\nBirthDate = " + sdf.format(birthDate) + 
+				"\nBaseSalary = $ " + String.format("%.2f", baseSalary) + 
+				"\n\nDepartament:" + departament;
 	}
 	
 }
