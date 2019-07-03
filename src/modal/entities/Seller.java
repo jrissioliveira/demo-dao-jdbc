@@ -108,7 +108,7 @@ public class Seller implements Serializable {
 				"\nEmail = " + email + 
 				"\nBirthDate = " + sdf.format(birthDate) + 
 				"\nBaseSalary = $ " + String.format("%.2f", baseSalary) + 
-				"\n\nDepartament:" + departament;
+				"\nDepartament:" + departament;
 	}
 	
 }
